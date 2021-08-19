@@ -6,6 +6,7 @@ import java.sql.Date
 import com.datawizards.dmg.annotations._
 import com.datawizards.dmg.annotations.hive._
 import com.datawizards.dmg.annotations.es._
+import com.datawizards.dmg.annotations.flink._
 
 object TestModel {
   case class Person(name: String, age: Int)
@@ -71,6 +72,7 @@ object TestModel {
   @hiveTableProperty("key1", "value1")
   @hiveTableProperty("key2", "value2")
   @hiveTableProperty("key3", "value3")
+  @flinkTableProperty
   case class PersonMultipleTableProperties(name: String, age: Int)
 
   @hiveTableProperty("avro.schema.url", "hdfs:///metadata/person.avro")
